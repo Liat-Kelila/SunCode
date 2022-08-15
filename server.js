@@ -6,8 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
-const Song = require('./models/schema.js');
-const data = require('./models/data.js');
+const Song = require('./Models/schema.js');
+const data = require('./Models/data.js');
 require('dotenv').config()
 //___________________
 //Port
@@ -36,7 +36,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //___________________
 
 //use public folder for static assets
-app.use(express.static('public'));
+app.use(express.static('Public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
