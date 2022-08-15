@@ -9,11 +9,12 @@
     <div class="container">
       <h1>Playlist Request</h1>
       <a href="/suncode" class="index-link" style="display: block;">Back Home</a><br>
-        <form action ="/suncode/results/" method="GET">
-            <!-- Current Mood: <input type="text" name="link" /><br/> -->
-            Energy-Level: <input type="number" name="energy" /><br/>
-            <input type="submit" value="Request Playlist"/>
-        </form>
+          <%for(let i = 0; i < song.length; i++) {%>
+            <%=song[i].name%>
+            <%=song[i].artist%>
+            <%=song[i].link%>
+            <%=song[i].energy%>
+          <% } %>
     </div>
   </body>
 </html>

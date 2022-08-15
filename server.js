@@ -3,6 +3,8 @@
 //___________________
 const express = require('express');
 const methodOverride  = require('method-override');
+const Song = require('./models/Schema.js');
+const data = require('./models/data.js');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
@@ -53,13 +55,21 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // });
 
 //<---Seed Route--->
+// app.get('/suncode/seed', (req, res) => {
+//   //tells it to create documents in that budget section.
+//   Song.create(data, (err, data) => {
+//     // res.send(data)
+//     res.redirect('/suncode')
+//   })
+// })
 
 //<---Delete Route--->
+//link this to a button
 
 //<---Edit Route--->
 
 //<---Index Route--->
-app.get('/suncode', (req, res) => {
+app.get('/', (req, res) => {
   res.render('index.ejs');
 });
 
@@ -68,11 +78,29 @@ app.get('/suncode/new', (req, res) => {
     res.render('new.ejs');
   });
 
+//<---Create Route--->
+app.post('/suncode', (req, res) => {
+  Song.create(req.body, (err, createdSong) => {
+    res.redirect('/suncode')
+  });
+});
+
 //<---Show Route--->
-app.get('/suncode/:id', (req,res) => {
-    res.render('show.ejs');
+app.get('/suncode/show', (req,res) => {
+    res.render('show.ejs')
   });
 
+
+app.get('/suncode/results', (req,res) => {
+  //This finds based on key-value pair (energy: __), but we don't know key-value pair until user inputs it. So how to get it to listen properly & return results page.
+    Song.find({}, (err, foundSong) => {
+      res.render
+      ('results.ejs',
+        {
+          song: foundSong
+        });
+    })
+  });
 
 //___________________
 //Listener
