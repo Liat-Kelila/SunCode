@@ -6,7 +6,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
-const Song = require('./models/Schema.js');
+const Song = require('./models/schema.js');
 const data = require('./models/data.js');
 require('dotenv').config()
 //___________________
