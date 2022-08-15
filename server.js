@@ -69,7 +69,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //<---Edit Route--->
 
 //<---Index Route--->
-app.get('/', (req, res) => {
+app.get('/suncode', (req, res) => {
   res.render('index.ejs');
 });
 //
