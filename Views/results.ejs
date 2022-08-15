@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -16,5 +16,26 @@
             <%=song[i].energy%>
           <% } %>
     </div>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Playlist Request</h1>
+      <a href="/suncode" class="index-link" style="display: block;">Back Home</a><br>
+          <%for(let i = 0; i < song.length; i++) {%>
+            <%=song[i].name%>
+            <%=song[i].artist%>
+            <%=song[i].link%>
+            <%=song[i].energy%>
+          <% } %>
+    </div>
+
   </body>
 </html>
