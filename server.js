@@ -22,7 +22,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI)
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -51,6 +51,28 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 app.get('/' , (req, res) => {
   res.send('Hello World!');
 });
+
+//<---Seed Route--->
+
+//<---Delete Route--->
+
+//<---Edit Route--->
+
+//<---Index Route--->
+app.get('/suncode', (req, res) => {
+  res.render('index.ejs');
+});
+
+//<---New Route--->
+app.get('/suncode/new', (req, res) => {
+    res.render('new.ejs');
+  });
+
+//<---Show Route--->
+app.get('/suncode/:id', (req,res) => {
+    res.render('show.ejs');
+  });
+
 
 //___________________
 //Listener

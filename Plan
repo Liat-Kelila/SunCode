@@ -1,0 +1,67 @@
+THIS PROJECT’S REPOSITORY EXISTS IN SUNCODE, WHICH IS A DIRECTORY I MADE IN OUR DEV DIRECTORY :)
+
+
+Don’t use terminal for mongodb! Go into atlast and database, then collections - that is where your populated data should appear once you have it set up
+
+
+For pushing and deployment:
+
+git add .
+git commit -m “”
+git push origin main
+git push heroku main
+
+
+Brainstorming
+	-We are creating an app where things will be entered, updated, deleted, etc
+
+	-App should solve a problem
+
+What can I do for a DJ website?!
+	-User can tell about moods, playlist gets created for them?
+
+Let’s say:
+
+	Elevation Sounds
+
+I have a model database. Contains an array of objects. Each object is a song, schema goes as:
+
+	Name:
+	Artist:
+	Youtube-Link:
+	Mood:
+	Energy Level:
+
+I can have one input form where people can submit songs they enjoy and assign it this information.
+
+I can have another input form where the user determines their:
+	Mood:
+	Energy Level:
+
+
+DELETING ~ It would be great if I could add a delete button next to each song that comes up in the curated playlist so that if user doesn’t like the song, they can delete it. But would this delete from the actual database? Or just from what they see? I want it to remain in the database for other users.
+
+EDITING ~ how do we do this in this app? I guess I could allow users to edit the energy levels of songs, so that it’s communally decided upon.
+	Stretch goal: Could it somehow store all the edits to the song’s energy level & return the average energy level from all submissions?
+
+
+Then the results page provides them with a curated playlist. The playlist returns songs that are in the same mood category. The songs start at the same energy level, but increase incrementally. Goal of app is to meet users where they are at, and gradually increase their energy level through a musical journey.
+
+Wireframes:
+Homepage ~ Greeting with description of what the app does. Explain that user can either receive, or contribute. A button for each will be displayed.
+Receive playlist button ~ takes user to input page, where they input their mood // energy level and click receive.
+Results ~ results page appears, with a simple curated playlist to match their mood & elevate their energy.
+Contribute button ~ takes user to input page, where they input song titles/links, etc with mood/energy selection. "Thank you for your contribution!" comes up in response to submission.
+
+Schedule:
+Thursday ~ Wireframes, set up basic html user interface pathway.
+Friday ~ Data entry, form creations, connect form submission to database, function to curate playlist and return to user!
+Weekend ~ User interface basic set up, so I can see that app is coming together and user is able to navigate.
+Monday ~ Edit and Delete buttons
+Tuesday ~ Elaborate on user interface
+Wednesday ~ Finishing touches and readMe // heroku final deployment
+Thursday ~ Present!
+
+
+Further: try to pick 'milestones' (check with the project markdown and determine what your project's specific MVPs will look like) and prioritize features by MVPs and stretch goals).
+This takes practice so be ready to adjust your schedule. Note: You will have to make changes and adjust/adapt as you build
