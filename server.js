@@ -3,8 +3,8 @@
 //___________________
 const express = require('express');
 const methodOverride  = require('method-override');
-// const Song = require('./models/Schema.js');
-// const data = require('./models/data.js');
+const Song = require('./models/Schema.js');
+const data = require('./models/data.js');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
@@ -70,7 +70,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //<---Index Route--->
 app.get('/', (req, res) => {
-  res.send('index.ejs');
+  res.render('index.ejs');
 });
 //
 // //<---New Route--->
