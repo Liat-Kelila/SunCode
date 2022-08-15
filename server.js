@@ -70,37 +70,37 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //<---Index Route--->
 app.get('/', (req, res) => {
-  res.render('index.ejs');
+  res.send('index.ejs');
 });
-
-//<---New Route--->
-app.get('/suncode/new', (req, res) => {
-    res.render('new.ejs');
-  });
-
-//<---Create Route--->
-app.post('/suncode', (req, res) => {
-  Song.create(req.body, (err, createdSong) => {
-    res.redirect('/suncode')
-  });
-});
-
-//<---Show Route--->
-app.get('/suncode/show', (req,res) => {
-    res.render('show.ejs')
-  });
-
-
-app.get('/suncode/results', (req,res) => {
-  //This finds based on key-value pair (energy: __), but we don't know key-value pair until user inputs it. So how to get it to listen properly & return results page.
-    Song.find({}, (err, foundSong) => {
-      res.render
-      ('results.ejs',
-        {
-          song: foundSong
-        });
-    })
-  });
+//
+// //<---New Route--->
+// app.get('/suncode/new', (req, res) => {
+//     res.render('new.ejs');
+//   });
+//
+// //<---Create Route--->
+// app.post('/suncode', (req, res) => {
+//   Song.create(req.body, (err, createdSong) => {
+//     res.redirect('/suncode')
+//   });
+// });
+//
+// //<---Show Route--->
+// app.get('/suncode/show', (req,res) => {
+//     res.render('show.ejs')
+//   });
+//
+//
+// app.get('/suncode/results', (req,res) => {
+//   //This finds based on key-value pair (energy: __), but we don't know key-value pair until user inputs it. So how to get it to listen properly & return results page.
+//     Song.find({}, (err, foundSong) => {
+//       res.render
+//       ('results.ejs',
+//         {
+//           song: foundSong
+//         });
+//     })
+//   });
 
 //___________________
 //Listener
