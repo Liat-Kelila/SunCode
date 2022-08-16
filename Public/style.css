@@ -3,3 +3,8 @@ body {
   text-align: center;
   font-size: 10px;
 }
+
+ul {
+  list-style: none;
+  text-align: center;
+}

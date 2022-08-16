@@ -6,8 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
-const Song = require('./Models/schema.js');
-const data = require('./Models/data.js');
+const Song = require('./models/schema.js');
+const data = require('./models/data.js');
 require('dotenv').config()
 //___________________
 //Port
@@ -36,7 +36,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //___________________
 
 //use public folder for static assets
-app.use(express.static('Public'));
+app.use(express.static('public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
@@ -70,37 +70,38 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //<---Index Route--->
 app.get('/suncode', (req, res) => {
-  res.render('/Views/index.ejs');
+  res.render('index.ejs');
 });
 //
-// //<---New Route--->
-// app.get('/suncode/new', (req, res) => {
-//     res.render('new.ejs');
-//   });
-//
-// //<---Create Route--->
-// app.post('/suncode', (req, res) => {
-//   Song.create(req.body, (err, createdSong) => {
-//     res.redirect('/suncode')
-//   });
-// });
-//
-// //<---Show Route--->
-// app.get('/suncode/show', (req,res) => {
-//     res.render('show.ejs')
-//   });
-//
-//
-// app.get('/suncode/results', (req,res) => {
-//   //This finds based on key-value pair (energy: __), but we don't know key-value pair until user inputs it. So how to get it to listen properly & return results page.
-//     Song.find({}, (err, foundSong) => {
-//       res.render
-//       ('results.ejs',
-//         {
-//           song: foundSong
-//         });
-//     })
-//   });
+//<---New Route--->
+app.get('/suncode/new', (req, res) => {
+    res.render('new.ejs');
+  });
+
+//<---Create Route--->
+app.post('/suncode', (req, res) => {
+  Song.create(req.body, (err, createdSong) => {
+    res.redirect('/suncode')
+  });
+});
+
+//<---Show Route--->
+app.get('/suncode/show', (req,res) => {
+    res.render('show.ejs')
+  });
+
+
+app.get('/suncode/results', (req,res) => {
+  //This finds based on key-value pair (energy: __), but we don't know key-value pair until user inputs it. So how to get it to listen properly & return results page.
+    // console.log(req.query.energy)
+    Song.find({energy: {$gte: req.query.energy}}, (err, foundSong) => {
+      res.render
+      ('results.ejs',
+        {
+          song: foundSong
+        });
+    }).sort({energy: 1});
+  });
 
 //___________________
 //Listener
