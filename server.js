@@ -63,10 +63,31 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //   })
 // })
 
-//<---Delete Route--->
-//link this to a button
+//Delete route
+app.delete('/suncode/:id', (req, res) => {
+  Song.findByIdAndRemove(req.params.id, (err, deletedArtist) => {
+    res.redirect('/suncode/display');
+  })
+})
 
 //<---Edit Route--->
+app.get('/suncode/:id/edit', (req,res) => {
+  Song.findById(req.params.id, (err, foundSong) => {
+    res.render(
+      'edit.ejs',
+      {
+        song: foundSong
+      });
+    });
+  });
+
+app.put('/suncode/:id', (req, res) => {
+  Song.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err,updateModel) => {
+      res.redirect('/suncode/display')
+    })
+  })
+
+
 
 //<---Index Route--->
 app.get('/suncode', (req, res) => {
@@ -102,6 +123,15 @@ app.get('/suncode/results', (req,res) => {
         });
     }).sort({energy: 1});
   });
+
+app.get('/suncode/display', (req,res) => {
+    Song.find({}, (err, foundSong) => {
+      res.render('display.ejs',
+      {
+        song: foundSong
+      })
+    }).sort({energy: 1});
+  })
 
 //___________________
 //Listener
