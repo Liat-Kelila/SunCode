@@ -1,32 +1,100 @@
 body {
-  background-color: lemonchiffon;
+  background-image: url(/images/water.jpeg);
+  background-repeat: no-repeat;
   text-align: center;
   font-size: 10px;
+
 }
+
 
 ul {
   list-style: none;
   text-align: center;
 }
 
-.container {
-  background-color: white;
-  width: 150px;
+#message {
+  color: white;
+}
+
+.main_container {
+  /* width: 150px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 10%;
-  -webkit-filter: drop-shadow(20px 20px 20px rgba(14, 14, 14, 0.8));
-  padding: 35px;
+  /* margin-left: 10%; */
+  -webkit-filter: drop-shadow(20px 20px 20px rgb(255,255,255));
+  margin: auto;
+  top: 250px;
+  align-items: center;
+  display: inline-block;
 }
+
+.container_add {
+  /* width: 150px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-left: 10%; */
+  -webkit-filter: drop-shadow(20px 20px 20px rgb(255,255,255));
+  padding: 35px;
+  top: 350px;
+  left: -150px;
+  align-items: center;
+  display: inline-block;
+}
+
+.container_view {
+  /* width: 150px; */
+  border: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-left: 10%; */
+  -webkit-filter: drop-shadow(20px 20px 20px rgb(255,255,255));
+  padding: 35px;
+  /* margin: auto; */
+  top: 350px;
+  right: -150px;
+  align-items: center;
+  display: inline-block;
+}
+
+.link {
+  text-decoration: none;
 }
 
 #button1 {
+  background-color: lightblue;
+  border: white;
+  position: relative;
   width: 100px;
   height: 100px;
+  border-radius: 50%;
+  /* top: 300px; */
+  border-radius: 50%;
+  top: 300px;
 
 }
 
-#button2
+#button2 {
+  background-color: lightblue;
+  position: relative;
+  /* left: 375px;
+  top: 300px; */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 150px;
+}
 
-#button3
+#button3 {
+  border: white;
+  background-color: lightblue;
+  position: relative;
+  /* top: 300px;
+  right: 100px; */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 300px;
+}
