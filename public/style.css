@@ -10,14 +10,15 @@ ul {
 }
 
 .container {
+  background-color: white;
+  width: 150px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 10%;
+  -webkit-filter: drop-shadow(20px 20px 20px rgba(14, 14, 14, 0.8));
+  padding: 35px;
+}
 }
 
 #button1 {
