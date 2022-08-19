@@ -3,23 +3,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="/style.css">
     <title></title>
   </head>
-  <body>
-    <div class="container">
+  <body class="background">
+    <div id ="new_container">
     <h1>Song Submission</h1>
-      <a href="/suncode" class="index-link" style="display: block;">Back Home</a><br>
 <!-- //Where does the action go? -->
           <form action ="/suncode" method="POST">
-            Name: <input type="text" name="name" /><br/>
-            Artist: <input type="text" name="artist" /><br/>
-            Link: <input type="text" name="link" /><br/>
+            Name: <input type="text" name="name" class="input"/><br/>
+            Artist: <input type="text" name="artist" class="input"/><br/>
+            Link: <input type="text" name="link" class="input"/><br/>
             <!-- Mood: <input type="text" name="mood" /><br/> -->
-            Energy: <input type="number" name="energy" /><br/>
-            <input type="submit" value="Contribute"/>
+            Energy:<input type="number" name="energy" class="input"/><br/>
+            <input type="submit" value="Contribute" class="input_button"/>
           </form>
       </div>
+      <div class="back"/>
+      <a href="/suncode" class="link" style="display: block;">Back Home</a><br>
+    </div>
 
   </body>
 </html>

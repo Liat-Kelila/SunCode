@@ -2,19 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="/style.css">
     <title></title>
   </head>
-  <body>
-    <div class="container">
-      <h1>Playlist Request</h1>
+  <body id="background">
+    <div id="show_container">
         <h2>What is your current energy level from 0-10?</h2>
-      <a href="/suncode" class="index-link" style="display: block;">Back Home</a><br>
         <form action ="/suncode/results/" method="GET">
             <!-- Current Mood: <input type="text" name="link" /><br/> -->
             Energy-Level: <input type="number" name="energy" /><br/>
-            <input type="submit" value="Request Playlist"/>
+            <input type="submit" value="Request Playlist" id="playlist"/>
         </form>
+    </div>
+    <div class="back" id="show_back">
+      <a href="/suncode" class="index-link" style="display: block;">Back Home</a><br>
     </div>
   </body>
 </html>

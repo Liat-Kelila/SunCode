@@ -5,12 +5,15 @@
         <link rel="stylesheet" href="/style.css">
     <title></title>
   </head>
-  <body>
+  <body class="background">
     <div class="container2">
       <h1>Playlist Request</h1>
+      <div class="back" id="back-results">
       <a href="/suncode" class="index-link" style="display: block;">Back Home</a><br>
+    </div>
         <!-- This is where the playlist gets generated and returned nicely! -->
           <%for(let i = 0; i < song.length; i++) {%>
+          <div id="ul">
             <ul class="list">
               <li>Energy level: <%=song[i].energy%><br/>
               <li><%=song[i].name%> by: <%=song[i].artist%></li>
